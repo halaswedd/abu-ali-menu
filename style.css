@@ -1,0 +1,1474 @@
+/* =========================================
+   COLORS
+========================================= */
+
+:root {
+
+    --brown-dark: #29150d;
+
+    --brown: #4b2919;
+
+    --orange: #d86a19;
+
+    --orange-light: #eb8b32;
+
+    --gold: #c58a3a;
+
+    --cream: #f8f4ed;
+
+    --cream-light: #fcfaf7;
+
+    --white: #ffffff;
+
+    --text: #2d241f;
+
+    --text-light: #786c64;
+
+    --border: #eadfd5;
+
+    --shadow:
+        0 6px 22px rgba(41, 21, 13, 0.07);
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+    scroll-padding-top: 75px;
+}
+
+
+body {
+
+    font-family: "Cairo", sans-serif;
+
+    background:
+        var(--cream-light);
+
+    color:
+        var(--text);
+
+    overflow-x: hidden;
+}
+
+
+img {
+
+    display: block;
+
+    max-width: 100%;
+}
+
+
+button {
+
+    font-family: inherit;
+}
+
+
+a {
+
+    text-decoration: none;
+
+    color: inherit;
+}
+
+
+/* =========================================
+   MENU SECTION
+========================================= */
+
+.menu-section {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    padding:
+        28px
+        14px
+        80px;
+
+    background:
+        var(--cream-light);
+}
+
+
+.menu-logo-wrapper {
+    position: relative;
+
+    width: 100%;
+    height: 175px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1;
+}
+
+
+.menu-logo {
+    position: relative;
+    z-index: 2;
+
+    width: 190px;
+    height: 140px;
+
+    object-fit: contain;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    animation:
+        logoFloat 3.5s ease-in-out infinite;
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+
+    filter:
+        drop-shadow(
+            0 7px 12px
+            rgba(216, 106, 25, 0.2)
+        );
+}
+
+
+.menu-logo-wrapper::before {
+    content: "";
+
+    position: absolute;
+
+    width: 160px;
+    height: 105px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(216, 106, 25, 0.14);
+
+    filter: blur(28px);
+
+    opacity: 0.8;
+}
+
+
+.menu-logo-wrapper:hover .menu-logo {
+    transform:
+        scale(1.07)
+        rotate(-1deg);
+
+    filter:
+        drop-shadow(
+            0 0 12px
+            rgba(216, 106, 25, 0.45)
+        )
+        drop-shadow(
+            0 10px 18px
+            rgba(41, 21, 13, 0.16)
+        );
+}
+
+
+
+
+/* =========================================
+   LOGO ANIMATION
+========================================= */
+
+@keyframes logoFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+    }
+
+    50% {
+
+        transform:
+            translateY(-4px);
+    }
+}
+
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.section-heading {
+
+    max-width: 700px;
+
+    margin:
+        0 auto 28px;
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+.heading-line {
+
+    width: 55px;
+
+    height: 1px;
+
+    background:
+        rgba(216, 106, 25, 0.55);
+
+    margin-bottom: 12px;
+}
+
+
+.small-title {
+
+    color:
+        var(--orange);
+
+    font-size:
+        9px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        2.3px;
+
+    direction:
+        ltr;
+}
+
+
+.section-heading h1 {
+
+    margin-top: 4px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    color:
+        var(--brown-dark);
+
+    font-size:
+        36px;
+
+    line-height:
+        1.2;
+}
+
+
+.section-subtitle {
+
+    margin-top: 5px;
+
+    color:
+        var(--text-light);
+
+    font-size:
+        13px;
+}
+
+
+/* =========================================
+   CATEGORY WRAPPER
+========================================= */
+
+.category-wrapper {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin:
+        0 auto 28px;
+
+    position: sticky;
+
+    top: 8px;
+
+    z-index: 100;
+
+    padding:
+        7px 0;
+
+    background:
+        rgba(252, 250, 247, 0.93);
+
+    backdrop-filter:
+        blur(10px);
+
+    -webkit-backdrop-filter:
+        blur(10px);
+}
+
+
+/* =========================================
+   CATEGORY FILTER
+========================================= */
+
+.category-filter {
+
+    display: flex;
+
+    gap: 7px;
+
+    overflow-x: auto;
+
+    padding:
+        3px 2px 6px;
+
+    scrollbar-width: none;
+}
+
+
+.category-filter::-webkit-scrollbar {
+
+    display: none;
+}
+
+
+/* =========================================
+   CATEGORY BUTTON
+========================================= */
+
+.category-btn {
+
+    flex-shrink: 0;
+
+    padding:
+        8px 15px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        50px;
+
+    background:
+        var(--white);
+
+    color:
+        var(--brown);
+
+    font-size:
+        12px;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+    white-space:
+        nowrap;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.category-btn:active {
+
+    transform:
+        scale(0.96);
+}
+
+
+.category-btn.active {
+
+    background:
+        var(--orange);
+
+    border-color:
+        var(--orange);
+
+    color:
+        var(--white);
+
+    box-shadow:
+        0 4px 13px
+        rgba(216, 106, 25, 0.18);
+}
+
+
+/* =========================================
+   MENU LIST
+========================================= */
+
+.menu-list {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin:
+        0 auto;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        13px;
+}
+
+
+/* =========================================
+   CATEGORY TITLE
+========================================= */
+
+.category-title {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    margin:
+        23px 0 3px;
+}
+
+
+.category-title:first-child {
+
+    margin-top:
+        4px;
+}
+
+
+.category-title h2 {
+
+    flex-shrink:
+        0;
+
+    color:
+        var(--brown-dark);
+
+    font-size:
+        19px;
+
+    font-weight:
+        800;
+}
+
+
+.category-title-line {
+
+    flex:
+        1;
+
+    height:
+        1px;
+
+    background:
+        var(--border);
+}
+
+
+/* =========================================
+   NORMAL ITEM
+========================================= */
+
+.menu-item {
+
+    width:
+        100%;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        100px
+        1fr
+        auto;
+
+    align-items:
+        center;
+
+    gap:
+        13px;
+
+    padding:
+        11px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        17px;
+
+    background:
+        var(--white);
+
+    box-shadow:
+        var(--shadow);
+
+    overflow:
+        hidden;
+
+    animation:
+        cardEntrance
+        0.4s ease both;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.menu-item:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(41, 21, 13, 0.1);
+}
+
+
+/* =========================================
+   ITEM IMAGE
+========================================= */
+
+.item-image {
+
+    width:
+        100px;
+
+    height:
+        100px;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        13px;
+
+    background:
+        #eee7df;
+}
+
+
+.item-image img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    transition:
+        transform 0.35s ease;
+}
+
+
+.menu-item:hover
+.item-image img {
+
+    transform:
+        scale(1.05);
+}
+
+
+/* =========================================
+   ITEM INFO
+========================================= */
+
+.item-info {
+
+    min-width:
+        0;
+}
+
+
+.item-info h2 {
+
+    margin-bottom:
+        3px;
+
+    color:
+        var(--brown-dark);
+
+    font-size:
+        17px;
+
+    font-weight:
+        800;
+
+    line-height:
+        1.5;
+}
+
+
+.item-description {
+
+    margin-bottom:
+        7px;
+
+    color:
+        var(--text-light);
+
+    font-size:
+        11px;
+
+    line-height:
+        1.8;
+}
+
+
+/* =========================================
+   PRICE
+========================================= */
+
+.item-price {
+
+    flex-shrink:
+        0;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+}
+
+
+.price {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        6px 9px;
+
+    border:
+        1px solid
+        rgba(216, 106, 25, 0.14);
+
+    border-radius:
+        8px;
+
+    background:
+        rgba(216, 106, 25, 0.08);
+
+    color:
+        var(--orange);
+
+    font-size:
+        11px;
+
+    font-weight:
+        800;
+
+    white-space:
+        nowrap;
+
+    direction:
+        ltr;
+}
+
+
+/* =========================================
+   SIZE
+========================================= */
+
+.item-size {
+
+    display:
+        inline-block;
+
+    margin-bottom:
+        4px;
+
+    color:
+        var(--orange);
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+}
+
+
+/* =========================================
+   LARGE ITEMS
+   GRILLS + CHICKEN
+========================================= */
+
+.menu-item.large-item {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        100px
+        1fr
+        auto;
+
+    align-items:
+        center;
+
+    gap:
+        13px;
+
+    padding:
+        12px;
+
+    border-radius:
+        20px;
+}
+
+
+.large-item .item-image {
+
+    width:
+        100px;
+
+    height:
+        100px;
+
+    margin:
+        0;
+
+    border-radius:
+        14px;
+}
+
+
+.large-item .item-info {
+
+    padding:
+        0;
+}
+
+
+.large-item .item-info h2 {
+
+    margin-bottom:
+        8px;
+
+    font-size:
+        19px;
+}
+
+
+/* =========================================
+   LARGE DESCRIPTION
+========================================= */
+
+.large-description {
+
+    margin-bottom:
+        0;
+}
+
+
+.large-description ul {
+
+    list-style:
+        none;
+
+    display:
+        grid;
+
+    gap:
+        5px;
+}
+
+
+.large-description li {
+
+    position:
+        relative;
+
+    padding-right:
+        14px;
+
+    color:
+        var(--text-light);
+
+    font-size:
+        11px;
+
+    line-height:
+        1.7;
+}
+
+
+.large-description li::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    right:
+        0;
+
+    top:
+        9px;
+
+    width:
+        4px;
+
+    height:
+        4px;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--orange);
+}
+
+
+.large-item .price {
+
+    font-size:
+        11px;
+}
+
+
+/* =========================================
+   NO ITEMS
+========================================= */
+
+.no-items {
+
+    padding:
+        50px 20px;
+
+    text-align:
+        center;
+
+    color:
+        var(--text-light);
+
+    font-size:
+        14px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+
+    background:
+        var(--brown-dark);
+
+    color:
+        var(--white);
+
+    padding:
+        20px 18px 12px;
+
+    text-align:
+        center;
+}
+
+
+.footer-content {
+
+    width:
+        100%;
+
+    max-width:
+        800px;
+
+    margin:
+        auto;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
+
+    direction:
+        ltr;
+}
+
+
+/* =========================================
+   FOOTER LOGO
+   LEFT
+========================================= */
+
+.footer-brand {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    order:
+        1;
+}
+
+
+.footer-logo {
+
+    width:
+        90px;
+
+    height:
+        55px;
+
+    object-fit:
+        contain;
+
+    border-radius:
+        6px;
+}
+
+
+/* =========================================
+   CONTACT
+   RIGHT
+========================================= */
+
+.contact-info {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        flex-end;
+
+    gap:
+        20px;
+
+    margin:
+        0;
+
+    order:
+        2;
+
+    direction:
+        rtl;
+}
+
+
+.contact-info a {
+
+    color:
+        rgba(255, 255, 255, 0.9);
+
+    font-size:
+        12px;
+
+    white-space:
+        nowrap;
+
+    transition:
+        color 0.2s ease;
+}
+
+
+.contact-info a:hover {
+
+    color:
+        var(--orange-light);
+}
+
+
+/* =========================================
+   COPYRIGHT
+========================================= */
+
+.copyright {
+
+    margin-top:
+        10px;
+
+    color:
+        rgba(255, 255, 255, 0.4);
+
+    font-size:
+        9px;
+
+    direction:
+        ltr;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes cardEntrance {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(10px);
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (min-width: 600px) {
+
+    .menu-section {
+
+        padding:
+            35px
+            28px
+            90px;
+    }
+
+
+    .menu-logo {
+
+        width:
+            90px;
+
+        height:
+            62px;
+    }
+
+
+    .category-filter {
+
+        justify-content:
+            center;
+
+        flex-wrap:
+            wrap;
+
+        overflow:
+            visible;
+    }
+
+
+    .item-image {
+
+        width:
+            125px;
+
+        height:
+            110px;
+    }
+
+
+    .menu-item {
+
+        grid-template-columns:
+            125px
+            1fr
+            auto;
+    }
+
+
+    .large-item {
+
+        grid-template-columns:
+            125px
+            1fr
+            auto !important;
+    }
+
+
+    .large-item .item-image {
+
+        width:
+            125px;
+
+        height:
+            115px;
+    }
+
+
+    .item-info h2 {
+
+        font-size:
+            19px;
+    }
+
+
+    .item-description {
+
+        font-size:
+            12px;
+    }
+
+
+    .large-description li {
+
+        font-size:
+            12px;
+    }
+}
+
+
+/* =========================================
+   DESKTOP
+========================================= */
+
+@media (min-width: 900px) {
+
+    .menu-section {
+
+        padding:
+            40px
+            30px
+            110px;
+    }
+
+
+   .menu-logo {
+    width: 210px;
+    height: 150px;
+    }
+
+    .menu-logo-wrapper {
+        height: 185px;
+    }
+
+    .section-heading h1 {
+
+        font-size:
+            45px;
+    }
+
+
+    .menu-list {
+
+        max-width:
+            950px;
+
+        gap:
+            16px;
+    }
+
+
+    .menu-item {
+
+        grid-template-columns:
+            145px
+            1fr
+            auto;
+
+        padding:
+            13px 16px;
+    }
+
+
+    .item-image {
+
+        width:
+            145px;
+
+        height:
+            110px;
+    }
+
+
+    .item-info h2 {
+
+        font-size:
+            21px;
+    }
+
+
+    .item-description {
+
+        max-width:
+            600px;
+
+        font-size:
+            13px;
+    }
+
+
+    /* GRILLS + CHICKEN */
+
+    .menu-item.large-item {
+
+        grid-template-columns:
+            250px
+            1fr
+            auto !important;
+
+        gap:
+            20px;
+
+        padding:
+            16px;
+    }
+
+
+    .large-item .item-image {
+
+        width:
+            250px;
+
+        height:
+            210px;
+    }
+
+
+    .large-item .item-info h2 {
+
+        font-size:
+            25px;
+    }
+
+
+    .large-description ul {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        column-gap:
+            25px;
+    }
+
+
+    .large-description li {
+
+        font-size:
+            13px;
+    }
+
+
+    .large-item .price {
+
+        font-size:
+            13px;
+    }
+
+
+    .footer-logo {
+
+        width:
+            105px;
+
+        height:
+            60px;
+    }
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+    .menu-section {
+
+        padding-left:
+            10px;
+
+        padding-right:
+            10px;
+    }
+
+
+    .menu-item {
+
+        grid-template-columns:
+            82px
+            1fr
+            auto;
+
+        gap:
+            9px;
+
+        padding:
+            9px;
+    }
+
+
+    .item-image {
+
+        width:
+            82px;
+
+        height:
+            88px;
+    }
+
+
+    .item-info h2 {
+
+        font-size:
+            15px;
+    }
+
+
+    .item-description {
+
+        font-size:
+            10px;
+    }
+
+
+    .price {
+
+        font-size:
+            9px;
+
+        padding:
+            5px 7px;
+    }
+
+
+    .large-item {
+
+        grid-template-columns:
+            82px
+            1fr
+            auto !important;
+    }
+
+
+    .large-item .item-image {
+
+        width:
+            82px;
+
+        height:
+            90px;
+    }
+
+
+    .large-description li {
+
+        font-size:
+            9.5px;
+    }
+
+
+    .footer-content {
+
+        gap:
+            10px;
+    }
+
+
+    .footer-logo {
+
+        width:
+            75px;
+
+        height:
+            50px;
+    }
+
+
+    .contact-info {
+
+        gap:
+            8px;
+    }
+
+
+    .contact-info a {
+
+        font-size:
+            10px;
+    }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+
+        scroll-behavior:
+            auto;
+    }
+
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+    }
+}
