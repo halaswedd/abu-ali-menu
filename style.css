@@ -733,144 +733,166 @@ a {
         700;
 }
 
-
 /* =========================================
-   LARGE ITEMS
    GRILLS + CHICKEN
+   SAME HORIZONTAL STYLE ON MOBILE
 ========================================= */
 
 .menu-item.large-item {
+    width: 100%;
 
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
-        100px
-        1fr
+        105px
+        minmax(0, 1fr)
         auto;
 
-    align-items:
-        center;
+    align-items: center;
 
-    gap:
-        13px;
+    gap: 12px;
 
-    padding:
-        12px;
+    padding: 10px;
 
-    border-radius:
-        20px;
+    border-radius: 20px;
+
+    direction: rtl;
 }
 
+
+/* IMAGE - RIGHT */
 
 .large-item .item-image {
+    width: 105px;
 
-    width:
-        100px;
+    min-width: 105px;
 
-    height:
-        100px;
+    height: 105px;
 
-    margin:
-        0;
+    margin: 0;
 
-    border-radius:
-        14px;
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    grid-column: 1;
 }
 
 
-.large-item .item-info {
+.large-item .item-image img {
+    width: 100%;
+    height: 100%;
 
-    padding:
-        0;
+    object-fit: cover;
+}
+
+
+/* CONTENT - CENTER */
+
+.large-item .item-info {
+    min-width: 0;
+
+    grid-column: 2;
+
+    text-align: right;
 }
 
 
 .large-item .item-info h2 {
+    margin-bottom: 7px;
 
-    margin-bottom:
-        8px;
+    color: var(--brown-dark);
 
-    font-size:
-        19px;
+    font-size: 18px;
+
+    font-weight: 800;
+
+    line-height: 1.4;
 }
 
 
 /* =========================================
-   LARGE DESCRIPTION
+   DESCRIPTION - TWO COLUMNS
 ========================================= */
 
-.large-description {
+.large-item .large-description {
+    width: 100%;
 
-    margin-bottom:
-        0;
+    margin: 0;
 }
 
 
-.large-description ul {
+.large-item .large-description ul {
+    list-style: none;
 
-    list-style:
-        none;
+    display: grid;
 
-    display:
-        grid;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
-    gap:
-        5px;
+    column-gap: 15px;
+
+    row-gap: 4px;
+
+    margin: 0;
+
+    padding: 0;
 }
 
 
-.large-description li {
+.large-item .large-description li {
+    position: relative;
 
-    position:
-        relative;
+    padding-right: 12px;
 
-    padding-right:
-        14px;
+    color: var(--text-light);
 
-    color:
-        var(--text-light);
+    font-size: 10px;
 
-    font-size:
-        11px;
+    line-height: 1.8;
 
-    line-height:
-        1.7;
+    white-space: nowrap;
 }
 
 
-.large-description li::before {
+.large-item .large-description li::before {
+    content: "";
 
-    content:
-        "";
+    position: absolute;
 
-    position:
-        absolute;
+    right: 0;
 
-    right:
-        0;
+    top: 8px;
 
-    top:
-        9px;
+    width: 4px;
 
-    width:
-        4px;
+    height: 4px;
 
-    height:
-        4px;
+    border-radius: 50%;
 
-    border-radius:
-        50%;
+    background: var(--orange);
+}
 
-    background:
-        var(--orange);
+
+/* =========================================
+   PRICE - LEFT
+========================================= */
+
+.large-item .item-price {
+    grid-column: 3;
+
+    align-self: center;
+
+    justify-self: start;
 }
 
 
 .large-item .price {
+    padding: 6px 8px;
 
-    font-size:
-        11px;
+    font-size: 10px;
+
+    white-space: nowrap;
 }
 
 
@@ -914,25 +936,29 @@ a {
 }
 
 
+/* =========================================
+   FOOTER CONTENT
+========================================= */
+
 .footer-content {
 
     width:
         100%;
 
     max-width:
-        800px;
+        900px;
 
     margin:
         auto;
 
     display:
-        flex;
+        grid;
+
+    grid-template-columns:
+        1fr 1fr 1fr;
 
     align-items:
         center;
-
-    justify-content:
-        space-between;
 
     gap:
         20px;
@@ -943,7 +969,7 @@ a {
 
 
 /* =========================================
-   FOOTER LOGO
+   LOGO
    LEFT
 ========================================= */
 
@@ -955,8 +981,8 @@ a {
     align-items:
         center;
 
-    order:
-        1;
+    justify-content:
+        flex-start;
 }
 
 
@@ -977,7 +1003,57 @@ a {
 
 
 /* =========================================
-   CONTACT
+   LOCATION
+   CENTER
+========================================= */
+
+.location-info {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+    direction:
+        rtl;
+}
+
+
+.location-info a {
+
+    color:
+        rgba(255, 255, 255, 0.9);
+
+    font-size:
+        12px;
+
+    line-height:
+        1.7;
+
+    white-space:
+        nowrap;
+
+    transition:
+        color 0.2s ease;
+}
+
+
+.location-info a:hover {
+
+    color:
+        var(--orange-light);
+}
+
+
+/* =========================================
+   PHONE
    RIGHT
 ========================================= */
 
@@ -992,17 +1068,11 @@ a {
     justify-content:
         flex-end;
 
-    gap:
-        20px;
-
     margin:
         0;
 
-    order:
-        2;
-
     direction:
-        rtl;
+        ltr;
 }
 
 
@@ -1048,6 +1118,43 @@ a {
         ltr;
 }
 
+@media (max-width: 600px) {
+
+    .footer-content {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            12px;
+
+    }
+
+
+    .footer-brand {
+
+        justify-content:
+            center;
+
+    }
+
+
+    .location-info {
+
+        justify-content:
+            center;
+
+    }
+
+
+    .contact-info {
+
+        justify-content:
+            center;
+
+    }
+
+}
 
 /* =========================================
    ANIMATIONS
@@ -1132,25 +1239,6 @@ a {
     }
 
 
-    .large-item {
-
-        grid-template-columns:
-            125px
-            1fr
-            auto !important;
-    }
-
-
-    .large-item .item-image {
-
-        width:
-            125px;
-
-        height:
-            115px;
-    }
-
-
     .item-info h2 {
 
         font-size:
@@ -1178,6 +1266,53 @@ a {
 ========================================= */
 
 @media (min-width: 900px) {
+
+    .menu-item.large-item {
+    grid-template-columns:
+        250px
+        minmax(0, 1fr)
+        auto !important;
+
+    gap: 20px;
+
+    padding: 16px;
+}
+
+
+.large-item .item-image {
+    width: 250px;
+
+    min-width: 250px;
+
+    height: 210px;
+}
+
+
+.large-item .item-info h2 {
+    font-size: 25px;
+}
+
+
+.large-item .large-description ul {
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    column-gap: 25px;
+
+    row-gap: 6px;
+}
+
+
+.large-item .large-description li {
+    font-size: 13px;
+}
+
+
+.large-item .price {
+    font-size: 13px;
+
+    padding: 7px 10px;
+}
 
     .menu-section {
 
