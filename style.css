@@ -331,22 +331,18 @@ a {
 
     display: flex;
 
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    justify-content: center;
+
     gap: 7px;
 
-    overflow-x: auto;
+    width: 100%;
 
-    padding:
-        3px 2px 6px;
-
-    scrollbar-width: none;
+    padding: 3px 2px 6px;
 }
-
-
-.category-filter::-webkit-scrollbar {
-
-    display: none;
-}
-
 
 /* =========================================
    CATEGORY BUTTON
@@ -354,10 +350,11 @@ a {
 
 .category-btn {
 
-    flex-shrink: 0;
+    flex:
+        0 0 auto;
 
     padding:
-        8px 15px;
+        8px 16px;
 
     border:
         1px solid var(--border);
@@ -383,20 +380,39 @@ a {
     white-space:
         nowrap;
 
-    transition:
-        background 0.2s ease,
-        color 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
+ transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 
-.category-btn:active {
+/* =========================================
+   HOVER
+========================================= */
 
-    transform:
-        scale(0.96);
+.category-btn:hover {
+
+    background: var(--white);
+
+    border-color: var(--orange);
+
+    color: var(--orange);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 5px rgba(216, 106, 25, 0.55),
+        0 0 12px rgba(216, 106, 25, 0.35),
+        0 0 22px rgba(216, 106, 25, 0.15);
+
 }
 
+/* =========================================
+   ACTIVE
+========================================= */
 
 .category-btn.active {
 
@@ -412,6 +428,13 @@ a {
     box-shadow:
         0 4px 13px
         rgba(216, 106, 25, 0.18);
+}
+
+
+.category-btn:active {
+
+    transform:
+        scale(0.96);
 }
 
 
@@ -1056,48 +1079,45 @@ a {
    PHONE
    RIGHT
 ========================================= */
-
 .contact-info {
+    display: flex;
 
-    display:
-        flex;
+    flex-direction: column;
 
-    align-items:
-        center;
+    align-items: center;
 
-    justify-content:
-        flex-end;
+    justify-content: center;
 
-    margin:
-        0;
+    gap: 5px;
 
-    direction:
-        ltr;
+    margin: 0 auto;
 }
 
 
 .contact-info a {
+    color: rgba(255, 255, 255, 0.92);
 
-    color:
-        rgba(255, 255, 255, 0.9);
+    font-size: 13px;
 
-    font-size:
-        12px;
+    font-weight: 600;
 
-    white-space:
-        nowrap;
+    direction: ltr;
+
+    white-space: nowrap;
+
+    text-align: center;
 
     transition:
-        color 0.2s ease;
+        color 0.2s ease,
+        transform 0.2s ease;
 }
 
 
 .contact-info a:hover {
+    color: var(--orange-light);
 
-    color:
-        var(--orange-light);
+    transform: translateY(-1px);
 }
-
 
 /* =========================================
    COPYRIGHT
@@ -1119,6 +1139,11 @@ a {
 }
 
 @media (max-width: 600px) {
+
+    .menu-logo {
+    width: 260px;
+    height: 200px;
+    }
 
     .footer-content {
 
@@ -1198,25 +1223,33 @@ a {
 
 
     .menu-logo {
-
-        width:
-            250px;
-
-        height:
-            250px;
+    width: 260px;
+    height: 200px;
     }
 
 
-    .category-filter {
+     .category-filter {
 
-        justify-content:
-            center;
+        display: flex;
 
-        flex-wrap:
-            wrap;
+        flex-wrap: wrap;
 
-        overflow:
-            visible;
+        justify-content: center;
+
+        gap: 6px;
+
+        max-width: 360px;
+
+        margin: 0 auto;
+    }
+
+    .category-btn {
+
+        padding:
+            7px 13px;
+
+        font-size:
+            10px;
     }
 
 
@@ -1324,8 +1357,8 @@ a {
 
 
    .menu-logo {
-    width: 210px;
-    height: 150px;
+    width: 260px;
+    height: 200px;
     }
 
     .menu-logo-wrapper {
@@ -1606,4 +1639,257 @@ a {
         transition-duration:
             0.01ms !important;
     }
+}
+
+/* =========================================
+   EXTRAS
+   SMALL + CLEAN CARDS
+========================================= */
+
+.menu-item.extra-item {
+    display: grid;
+
+    grid-template-columns: 1fr auto;
+
+    align-items: center;
+
+    gap: 12px;
+
+    width: 100%;
+
+    min-height: 52px;
+
+    padding: 9px 13px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 13px;
+
+    background: var(--white);
+
+    box-shadow:
+        0 3px 12px
+        rgba(41, 21, 13, 0.05);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.menu-item.extra-item:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 7px 18px
+        rgba(41, 21, 13, 0.08);
+}
+
+
+/* =========================================
+   EXTRA NAME
+========================================= */
+
+.extra-item .extra-info {
+
+    min-width: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    text-align: right;
+}
+
+
+.extra-item .extra-info h2 {
+
+    margin: 0;
+
+    color:
+        var(--brown-dark);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================
+   SIZE
+========================================= */
+
+.extra-item .item-size {
+
+    display: inline-block;
+
+    margin: 0;
+
+    padding: 2px 6px;
+
+    border-radius: 5px;
+
+    background:
+        rgba(216, 106, 25, 0.08);
+
+    color:
+        var(--orange);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   PRICE
+========================================= */
+
+.extra-item .item-price {
+
+    flex-shrink: 0;
+}
+
+
+.extra-item .price {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 5px 8px;
+
+    border-radius: 7px;
+
+    background:
+        rgba(216, 106, 25, 0.08);
+
+    border:
+        1px solid
+        rgba(216, 106, 25, 0.12);
+
+    color:
+        var(--orange);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+
+    direction: ltr;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .menu-item.extra-item {
+
+        min-height: 48px;
+
+        padding:
+            8px 10px;
+
+        gap: 8px;
+
+        border-radius: 11px;
+    }
+
+
+    .extra-item .extra-info {
+
+        gap: 6px;
+    }
+
+
+    .extra-item .extra-info h2 {
+
+        font-size: 12px;
+    }
+
+
+    .extra-item .item-size {
+
+        font-size: 8px;
+
+        padding:
+            2px 5px;
+    }
+
+
+    .extra-item .price {
+
+        padding:
+            5px 6px;
+
+        font-size: 9px;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+    .menu-item.extra-item {
+
+        min-height: 45px;
+
+        padding:
+            7px 9px;
+
+        gap: 6px;
+    }
+
+
+    .extra-item .extra-info h2 {
+
+        font-size: 11px;
+    }
+
+
+    .extra-item .price {
+
+        font-size: 8.5px;
+
+        padding:
+            4px 6px;
+    }
+    
+     .category-filter {
+
+        max-width: 320px;
+
+        gap: 5px;
+    }
+
+
+    .category-btn {
+
+        padding:
+            6px 10px;
+
+        font-size:
+            9px;
+    }
+
 }
