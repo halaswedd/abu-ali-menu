@@ -295,6 +295,24 @@ const menuItems = [
         ]
     },
 
+    {
+    category: "meals",
+    categoryName: "وجبات",
+
+    name: "وجبة زينغر",
+
+    price: "750,000 LBP",
+
+    image: "assets/zinger-meal.jpg",
+
+    description: [
+        "قطعتين زينغر",
+        "بطاطا",
+        "ثوم",
+        "سلطة مايونيز",
+        "كبيس"
+    ]
+    },
 
     // =====================================
     // EXTRAS
