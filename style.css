@@ -878,24 +878,6 @@ a {
 }
 
 
-.large-item .large-description li::before {
-    content: "";
-
-    position: absolute;
-
-    right: 0;
-
-    top: 8px;
-
-    width: 4px;
-
-    height: 4px;
-
-    border-radius: 50%;
-
-    background: var(--orange);
-}
-
 
 /* =========================================
    PRICE - LEFT
@@ -2042,20 +2024,6 @@ a {
     }
 
 
-    /* orange dots */
-
-    .large-item .large-description li::before {
-
-        content: "•";
-
-        color: var(--orange);
-
-        font-size: 15px;
-
-        margin-left: 5px;
-
-    }
-
 
     /* ================================
        PRICE
@@ -2177,6 +2145,52 @@ a {
         padding: 7px 5px;
 
         border-radius: 9px;
+    }
+
+}
+
+/* =========================================
+   FIX INGREDIENT BULLETS
+========================================= */
+
+.large-item .large-description li::before,
+.large-item .large-description li::after {
+    content: none !important;
+    display: none !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .large-item .large-description li {
+        position: relative;
+
+        padding-right: 14px;
+    }
+
+
+    .large-item .large-description li::before {
+
+        content: "" !important;
+
+        display: block !important;
+
+        position: absolute;
+
+        right: 0;
+
+        top: 0.65em;
+
+        width: 5px;
+
+        height: 5px;
+
+        border-radius: 50%;
+
+        background: var(--orange);
+
     }
 
 }
