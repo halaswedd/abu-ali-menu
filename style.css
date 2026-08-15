@@ -2264,3 +2264,37 @@ a {
     }
 
 }
+
+.delivery-text {
+    text-align: center;
+
+    margin-top: 8px;
+    margin-bottom: 24px;
+
+    color: var(--orange);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    opacity: 0.85;
+}
+.footer-label {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
