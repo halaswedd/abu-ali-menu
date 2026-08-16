@@ -134,7 +134,7 @@ const menuItems = [
         category: "drinks",
         categoryName: "مشروبات",
         name: "Pepsi",
-        price: "100,000 LBP",
+        price: "70,000 LBP",
         image: "assets/pepsi-plastic.jpg",
         size: "بلاستيك"
     },
@@ -143,7 +143,7 @@ const menuItems = [
         category: "drinks",
         categoryName: "مشروبات",
         name: "7UP",
-        price: "100,000 LBP",
+        price: "70,000 LBP",
         image: "assets/7up-plastic.jpg",
         size: "بلاستيك"
     },
@@ -152,7 +152,7 @@ const menuItems = [
         category: "drinks",
         categoryName: "مشروبات",
         name: "Miranda",
-        price: "100,000 LBP",
+        price: "70,000 LBP",
         image: "assets/miranda-plastic.jpg",
         size: "بلاستيك"
     },
